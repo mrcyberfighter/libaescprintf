@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Types of libaescprintf &#8212; libaescprintf 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="The styled colored printf() functions:" href="Functions.html" />
+    <link rel="prev" title="libaescprintf (ANSI Escape Sequence Color Print Format)." href="libaescprintf.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Functions.html" title="The styled colored printf() functions:"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="libaescprintf.html" title="libaescprintf (ANSI Escape Sequence Color Print Format)."
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">libaescprintf 1.0.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="types-of-libaescprintf">
+<h1>Types of libaescprintf<a class="headerlink" href="#types-of-libaescprintf" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><strong class="program">libaescprintf</strong> make usage of different types of colors and styles:</div></blockquote>
+<blockquote id="libaescprintf-color">
+<div><div class="highlight-C"><div class="highlight"><pre><span></span><span class="c1">// Building a color and a style type. (Used into library functions).</span>
+
+<span class="k">enum</span> <span class="n">style_enum</span> <span class="p">{</span> <span class="n">normal</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">,</span> <span class="n">bold</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">,</span> <span class="n">dim</span> <span class="o">=</span> <span class="mi">2</span> <span class="p">,</span> <span class="n">italic</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">underline</span> <span class="o">=</span> <span class="mi">4</span> <span class="p">,</span> <span class="n">blink</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">inverted</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span> <span class="n">hidden</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">strikethrough</span> <span class="o">=</span> <span class="mi">9</span> <span class="p">}</span> <span class="p">;</span>
+
+<span class="c1">//typedef enum color_enum  color_t ;</span>
+<span class="k">typedef</span> <span class="k">enum</span> <span class="n">style_enum</span>  <span class="n">style_t</span> <span class="p">;</span>
+
+<span class="c1">// Building a foreground color type. (Used into library functions).</span>
+
+                     <span class="c1">// Foreground Normal &gt;= 30   &lt;= 37   (8 colors)</span>
+                     <span class="c1">// Foreground Light  &gt;= 90   &lt;= 97   (8 colors)</span>
+<span class="k">enum</span> <span class="n">fg_color_enum</span> <span class="p">{</span> <span class="n">fg_black</span>     <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>     <span class="n">fg_darkgray</span>     <span class="o">=</span> <span class="mi">90</span><span class="p">,</span>
+                     <span class="n">fg_red</span>       <span class="o">=</span> <span class="mi">31</span><span class="p">,</span>     <span class="n">fg_lightred</span>     <span class="o">=</span> <span class="mi">91</span><span class="p">,</span>
+                     <span class="n">fg_green</span>     <span class="o">=</span> <span class="mi">32</span><span class="p">,</span>     <span class="n">fg_lightgreen</span>   <span class="o">=</span> <span class="mi">92</span><span class="p">,</span>
+                     <span class="n">fg_yellow</span>    <span class="o">=</span> <span class="mi">33</span><span class="p">,</span>     <span class="n">fg_lightyellow</span>  <span class="o">=</span> <span class="mi">93</span><span class="p">,</span>
+                     <span class="n">fg_blue</span>      <span class="o">=</span> <span class="mi">34</span><span class="p">,</span>     <span class="n">fg_lightblue</span>    <span class="o">=</span> <span class="mi">94</span><span class="p">,</span>
+                     <span class="n">fg_pink</span>      <span class="o">=</span> <span class="mi">35</span><span class="p">,</span>     <span class="n">fg_lightpink</span>    <span class="o">=</span> <span class="mi">95</span><span class="p">,</span>
+                     <span class="n">fg_cyan</span>      <span class="o">=</span> <span class="mi">36</span><span class="p">,</span>     <span class="n">fg_lightcyan</span>    <span class="o">=</span> <span class="mi">96</span><span class="p">,</span>
+                     <span class="n">fg_lightgray</span> <span class="o">=</span> <span class="mi">37</span><span class="p">,</span>     <span class="n">fg_white</span>        <span class="o">=</span> <span class="mi">97</span><span class="p">,</span>
+
+                     <span class="n">fg_default</span>   <span class="o">=</span> <span class="mi">39</span> <span class="p">}</span> <span class="p">;</span>
+
+
+<span class="c1">// Building a background color type. (Used into library functions).</span>
+
+                     <span class="c1">// Background Normal &gt;= 40   &lt;= 47   (8 colors)</span>
+                     <span class="c1">// Background Light  &gt;= 100  &lt;= 107  (8 colors)</span>
+<span class="k">enum</span> <span class="n">bg_color_enum</span> <span class="p">{</span> <span class="n">bg_black</span>     <span class="o">=</span> <span class="p">(</span><span class="mi">30</span><span class="o">+</span><span class="mi">10</span><span class="p">),</span>     <span class="n">bg_darkgray</span>    <span class="o">=</span> <span class="p">(</span><span class="mi">90</span><span class="o">+</span><span class="mi">10</span><span class="p">),</span>
+                     <span class="n">bg_red</span>       <span class="o">=</span> <span class="p">(</span><span class="mi">31</span><span class="o">+</span><span class="mi">10</span><span class="p">),</span>     <span class="n">bg_lightred</span>    <span class="o">=</span> <span class="p">(</span><span class="mi">91</span><span class="o">+</span><span class="mi">10</span><span class="p">),</span>
+                     <span class="n">bg_green</span>     <span class="o">=</span> <span class="p">(</span><span class="mi">32</span><span class="o">+</span><span class="mi">10</span><span class="p">),</span>     <span class="n">bg_lightgreen</span>  <span class="o">=</span> <span class="p">(</span><span class="mi">92</span><span class="o">+</span><span class="mi">10</span><span class="p">),</span>
+                     <span class="n">bg_yellow</span>    <span class="o">=</span> <span class="p">(</span><span class="mi">33</span><span class="o">+</span><span class="mi">10</span><span class="p">),</span>     <span class="n">bg_lightyellow</span> <span class="o">=</span> <span class="p">(</span><span class="mi">93</span><span class="o">+</span><span class="mi">10</span><span class="p">),</span>
+                     <span class="n">bg_blue</span>      <span class="o">=</span> <span class="p">(</span><span class="mi">34</span><span class="o">+</span><span class="mi">10</span><span class="p">),</span>     <span class="n">bg_lightblue</span>   <span class="o">=</span> <span class="p">(</span><span class="mi">94</span><span class="o">+</span><span class="mi">10</span><span class="p">),</span>
+                     <span class="n">bg_pink</span>      <span class="o">=</span> <span class="p">(</span><span class="mi">35</span><span class="o">+</span><span class="mi">10</span><span class="p">),</span>     <span class="n">bg_lightpink</span>   <span class="o">=</span> <span class="p">(</span><span class="mi">95</span><span class="o">+</span><span class="mi">10</span><span class="p">),</span>
+                     <span class="n">bg_cyan</span>      <span class="o">=</span> <span class="p">(</span><span class="mi">36</span><span class="o">+</span><span class="mi">10</span><span class="p">),</span>     <span class="n">bg_lightcyan</span>   <span class="o">=</span> <span class="p">(</span><span class="mi">96</span><span class="o">+</span><span class="mi">10</span><span class="p">),</span>
+                     <span class="n">bg_lightgray</span> <span class="o">=</span> <span class="p">(</span><span class="mi">37</span><span class="o">+</span><span class="mi">10</span><span class="p">),</span>     <span class="n">bg_white</span>       <span class="o">=</span> <span class="p">(</span><span class="mi">97</span><span class="o">+</span><span class="mi">10</span><span class="p">),</span>
+
+                     <span class="n">bg_default</span>   <span class="o">=</span> <span class="p">(</span><span class="mi">39</span><span class="o">+</span><span class="mi">10</span><span class="p">)</span> <span class="p">}</span> <span class="p">;</span>
+
+<span class="k">typedef</span> <span class="k">enum</span> <span class="n">fg_color_enum</span>  <span class="n">fg_color_t</span> <span class="p">;</span>
+<span class="k">typedef</span> <span class="k">enum</span> <span class="n">bg_color_enum</span>  <span class="n">bg_color_t</span> <span class="p">;</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="Functions.html#libaescprintf-functions"><span class="std std-ref">Which you can use in various functions from this library.</span></a></p>
+</div></blockquote>
+<div class="section" id="styles">
+<span id="libaescprintf-styles"></span><h2>Styles<a class="headerlink" href="#styles" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>normal</li>
+<li>bold</li>
+<li>dim</li>
+<li>italic</li>
+<li>underline</li>
+<li>blink</li>
+<li>inverted</li>
+<li>hidden</li>
+<li>strikethrough</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="colors">
+<h2>Colors<a class="headerlink" href="#colors" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="foreground-colors-values">
+<span id="libaescprintf-fg-color"></span><h3>Foreground colors values<a class="headerlink" href="#foreground-colors-values" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>fg_black</li>
+<li>fg_darkgray</li>
+<li>fg_red</li>
+<li>fg_lightred</li>
+<li>fg_green</li>
+<li>fg_lightgreen</li>
+<li>fg_yellow</li>
+<li>fg_lightyellow</li>
+<li>fg_blue</li>
+<li>fg_lightblue</li>
+<li>fg_pink</li>
+<li>fg_lightpink</li>
+<li>fg_cyan</li>
+<li>fg_lightcyan</li>
+<li>fg_lightgray</li>
+<li>fg_white</li>
+<li>fg_default (Your current terminal foreground color).</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="background-colors-values">
+<span id="libaescprintf-bg-color"></span><h3>Background colors values<a class="headerlink" href="#background-colors-values" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>bg_black</li>
+<li>bg_darkgray</li>
+<li>bg_red</li>
+<li>bg_lightred</li>
+<li>bg_green</li>
+<li>bg_lightgreen</li>
+<li>bg_yellow</li>
+<li>bg_lightyellow</li>
+<li>bg_blue</li>
+<li>bg_lightblue</li>
+<li>bg_pink</li>
+<li>bg_lightpink</li>
+<li>bg_cyan</li>
+<li>bg_lightcyan</li>
+<li>bg_lightgray</li>
+<li>bg_white</li>
+<li>bg_default (Your current terminal background color).</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+</div>
+<div class="section" id="defines-of-libaescprintf">
+<h1>Defines of libaescprintf<a class="headerlink" href="#defines-of-libaescprintf" title="Permalink to this headline">¶</a></h1>
+<blockquote id="ansi-escape-sequences">
+<div><p>The ANSI escape sequences are defines as well into <strong class="program">libaescprintf</strong>:</p>
+<div class="highlight-C"><div class="highlight"><pre><span></span><span class="cm">/** You can use this defines into raw string formatting. **/</span>
+
+<span class="cp">#define ESC   &quot;\033&quot;  </span><span class="c1">// Escape sequence (octal format).</span>
+
+<span class="c1">// Dark colors defines.</span>
+<span class="cp">#define DB    ESC &quot;[30m&quot;  </span><span class="c1">// Dark Black.</span>
+<span class="cp">#define DR    ESC &quot;[31m&quot;  </span><span class="c1">// Dark Red.</span>
+<span class="cp">#define DG    ESC &quot;[32m&quot;  </span><span class="c1">// Dark Green.</span>
+<span class="cp">#define DY    ESC &quot;[33m&quot;  </span><span class="c1">// Dark Yellow.</span>
+<span class="cp">#define DS    ESC &quot;[34m&quot;  </span><span class="c1">// Dark Sky. (Dark blue)</span>
+<span class="cp">#define DP    ESC &quot;[35m&quot;  </span><span class="c1">// Dark Pink.</span>
+<span class="cp">#define DC    ESC &quot;[36m&quot;  </span><span class="c1">// Dark Cyan.</span>
+<span class="cp">#define DW    ESC &quot;[37m&quot;  </span><span class="c1">// Dark white. (Light Gray)</span>
+
+<span class="c1">// Light colors defines.</span>
+<span class="cp">#define LB    ESC &quot;[90m&quot;  </span><span class="c1">// Light Black.</span>
+<span class="cp">#define LR    ESC &quot;[91m&quot;  </span><span class="c1">// Light Red.</span>
+<span class="cp">#define LG    ESC &quot;[92m&quot;  </span><span class="c1">// Light Green.</span>
+<span class="cp">#define LY    ESC &quot;[93m&quot;  </span><span class="c1">// Light Yellow.</span>
+<span class="cp">#define LS    ESC &quot;[94m&quot;  </span><span class="c1">// Light Sky.  (Light blue)</span>
+<span class="cp">#define LP    ESC &quot;[95m&quot;  </span><span class="c1">// Light Pink.</span>
+<span class="cp">#define LC    ESC &quot;[96m&quot;  </span><span class="c1">// Light Cyan.</span>
+<span class="cp">#define LW    ESC &quot;[97m&quot;  </span><span class="c1">// Light White.</span>
+
+<span class="cp">#define DD    ESC &quot;[39m&quot;  </span><span class="c1">// Default color.</span>
+
+<span class="c1">// Styles defines</span>
+<span class="cp">#define RESET           ESC &quot;[0m&quot;   </span><span class="c1">// Reset.</span>
+<span class="cp">#define BOLD            ESC &quot;[1m&quot;   </span><span class="c1">// Bold.</span>
+<span class="cp">#define DIM             ESC &quot;[2m&quot;   </span><span class="c1">// DIM</span>
+<span class="cp">#define ITALIC          ESC &quot;[3m&quot;   </span><span class="c1">// Italic.</span>
+<span class="cp">#define UNDERSTRIKE     ESC &quot;[4m&quot;   </span><span class="c1">// Under-strike.</span>
+<span class="cp">#define BLINK           ESC &quot;[5m&quot;   </span><span class="c1">// Blink (Doesn&#39;t work on all terminals look at xterm it work&#39;s on it !).</span>
+<span class="cp">#define INVERTED        ESC &quot;[7m&quot;   </span><span class="c1">// Inverted (Invert foreground and background).</span>
+<span class="cp">#define HIDDEN          ESC &quot;[8m&quot;   </span><span class="c1">// Hidden (Print only background color).</span>
+<span class="cp">#define STRIKETROUGHT   ESC &quot;[9m&quot;   </span><span class="c1">// Strike-through.</span>
+</pre></div>
+</div>
+<p>You can simply make usage of them into <code class="xref py py-func docutils literal"><span class="pre">printf()</span></code> family functions.</p>
+</div></blockquote>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Types of libaescprintf</a><ul>
+<li><a class="reference internal" href="#styles">Styles</a></li>
+<li><a class="reference internal" href="#colors">Colors</a><ul>
+<li><a class="reference internal" href="#foreground-colors-values">Foreground colors values</a></li>
+<li><a class="reference internal" href="#background-colors-values">Background colors values</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#defines-of-libaescprintf">Defines of libaescprintf</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="libaescprintf.html"
+                        title="previous chapter">libaescprintf (ANSI Escape Sequence Color Print Format).</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Functions.html"
+                        title="next chapter">The styled colored <code class="docutils literal"><span class="pre">printf()</span></code> functions:</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Types_and_defines.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Functions.html" title="The styled colored printf() functions:"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="libaescprintf.html" title="libaescprintf (ANSI Escape Sequence Color Print Format)."
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">libaescprintf 1.0.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Brüggemann Eddie.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+First release.
+
+I hope to find collaborators for termcap support.
+
+So that we can get a simple little library for formating the output
+
+according to the terminal capabilities.
+
+Not a chunk library like ncurses.

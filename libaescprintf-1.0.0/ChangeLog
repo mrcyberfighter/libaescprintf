@@ -1,0 +1,7 @@
+libaescprintf (1.0.0) All; urgency=high
+
+  * First release of libaescprintf:
+ 
+    * ANSI Escape Sequences Color Print Format.
+      
+ -- Brüggemann Eddie <mrcyberfighter@gmail.com>  Sat, 26 Aug 2017 21:10:18 +0200

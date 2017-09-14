@@ -1,0 +1,84 @@
+=============
+libaescprintf
+=============
+
+  This library provides an easy way for formating the output.
+
+  With styles, foreground and background colors.
+ 
+  You either use the raw ANSI escape sequences with the printf family.
+ 
+  Or using the function of this library (take a look at the documentation). 
+   
+------------
+INSTALLATION
+------------
+
+Uncompress the tarball then change to the extracted folder and type:
+
+  $ ./configure # System check
+  $ make # build the library
+  $ sudo make install # Install the library.
+
+  This will perform a system check, building and installing the library.
+
+  :warning: The prefix is arbitrary set to "/usr" (not "/usr/local")
+            else it does not work.
+        
+            Thanks to mail me if you get a BUGFIX.
+
+-------------    
+Compatibility
+-------------
+
+  Unfortunately this library is based on the ANSI escape sequences
+
+  not termcap nor termios.
+
+  I hope to find collaborators to get instead the ANSI escapes sequences,
+ 
+  the universal sequences using termcap.
+ 
+  at minimal for what the current library provides.
+
+ 
+  To produce a lightweight pretty print library.
+ 
+  Thanks for any help.
+
+------
+AUTHOR
+------
+
+  Brüggemann Eddie <mrcyberfighter@gmail.com>.
+
+  Website: <htpp://www.open-source-projects.net>
+
+----
+NOTE
+----
+
+  I hope to find collaborators for termcap support.
+
+  So that we can get a simple lightweight library for formating the output
+
+  according to the terminal capabilities.
+
+  Not a chunk library like ncurses.
+ 
+------ 
+MACOSX
+------
+
+  This library doesn't work for the background colors on the Apple-terminal:
+ 
+  the old bug concern the background and the linefeed appears on some terminals.
+
+  If you set the background color other than default and set an linefeed
+ 
+  the entire line is background highlighted with the chosen color...
+
+  (but the blinking effect works well with it).
+ 
+  P.S: using the carriage return does not save it.
+

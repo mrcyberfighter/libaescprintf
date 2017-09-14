@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>About libaescprintf &#8212; libaescprintf 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="libaescprintf screen-shots:" href="libaescprintf_example_screenshot.html" />
+    <link rel="prev" title="The styled colored printf() functions:" href="Functions.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="libaescprintf_example_screenshot.html" title="libaescprintf screen-shots:"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Functions.html" title="The styled colored printf() functions:"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">libaescprintf 1.0.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="about-libaescprintf">
+<h1>About <strong class="program">libaescprintf</strong><a class="headerlink" href="#about-libaescprintf" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p>At first I often try myself to find the generic function into termcap to get the colors and styles codes</p>
+<p>for building a library compliant with any terminal and I fail to find it...</p>
+<p>So I often try to get some help from a terminal dinosaur which master termcap or termios to</p>
+<p>make a more generic library.</p>
+<p>But nobody <strong>HOME</strong>...</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>I can do more with terminal Sequences as displaying a True Color image (RGB) into a terminal</p>
+<p>(xterm, terminals build with libvte-2.91 on GNU/Linux)</p>
+<p>But I must reduce the cursor to the minimum size</p>
+<p>for doing this but I can&#8217;t restore a normal cursor size...</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">enjoy:</th><td class="field-body">So enjoy using <strong class="program">libaescprintf</strong> for ANSI art as I enjoy to write this little library.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="compatibility">
+<h2>Compatibility<a class="headerlink" href="#compatibility" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><strong class="program">libaescprintf</strong> was tested on as many terminals I could find into the repositories,</p>
+<p>sometimes some terminals either don&#8217;t blink or don&#8217;t accept <strong>ANSI</strong> escape sequences at all.</p>
+<p>But most of the time it works well.</p>
+<p>It works in most of the terminals: konsole as gnome-terminal and many others.</p>
+<p>But the old bug concern the background and the linefeed appears on some terminals:</p>
+<p>if you set the background color other than default and set an linefeed the entire line is</p>
+<p>background highlighted with the chosen color per example the Apple-Terminal do this one</p>
+<p>(but the blinking effect works well with it).</p>
+</div></blockquote>
+</div>
+<div class="section" id="note-from-the-author">
+<h2>Note from the author<a class="headerlink" href="#note-from-the-author" title="Permalink to this headline">¶</a></h2>
+<blockquote id="libaescprintf-goal">
+<div><p>I don&#8217;t try to reinvent the wheel but simply provide this minimalist library</p>
+<p>in the following goals:</p>
+<ol class="arabic simple">
+<li>At first to provide a lightweight library for only textual effect.</li>
+<li>To catch your attention so that someone can help me to make the library</li>
+</ol>
+<blockquote>
+<div>universal, using termcap (or termios).</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">About <strong class="program">libaescprintf</strong></a><ul>
+<li><a class="reference internal" href="#compatibility">Compatibility</a></li>
+<li><a class="reference internal" href="#note-from-the-author">Note from the author</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Functions.html"
+                        title="previous chapter">The styled colored <code class="docutils literal"><span class="pre">printf()</span></code> functions:</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="libaescprintf_example_screenshot.html"
+                        title="next chapter">libaescprintf screen-shots:</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/About_libaescprintf.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="libaescprintf_example_screenshot.html" title="libaescprintf screen-shots:"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Functions.html" title="The styled colored printf() functions:"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">libaescprintf 1.0.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Brüggemann Eddie.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.3.
+    </div>
+  </body>
+</html>
