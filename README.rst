@@ -56,7 +56,7 @@ In fact this library is a manner for asking to help for building
 
 a universal lightweight pretty print library using
 
-termcap for getting universal escape.
+termcap for getting universal escape sequences.
 
 Because I have try to find it alone without success.
 
